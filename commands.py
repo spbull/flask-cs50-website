@@ -1,6 +1,12 @@
-import click
-from flask.cli import with_appcontext
 from models import *
+
+# This file is used to populate db's on heroku.
+# It allows for database table creation (db.create_all()) 
+# and also populates the books table with data from an external CSV file
+
+# After db is created in heroku app and all files uploaded from github
+# go to more tab on top-right of heroku, click on run console, then
+# type: python script-name.py to run
 
 print('testing pos DAMMMIIIIIIIIIIIIT')
 
@@ -13,15 +19,7 @@ def loadCSV():
 		print(f"Added book to db: title:{title}, author:{author}, year:{year}, isbn:{isbn}")
 	db.commit()
 	
-# This is used for deployement on heroku specifically.
-# it allows for database table creation and to populate the books table
-# on heroku after db is created and all files uploaded from github
-# go to more tab on top-right of heroku, click on run console, then
-# type: flask create_tables to run and db should then be set up
-@click.command(name='create_tables')
-@with_appcontext
-def create_tables():
-	db.create_all()
-	loadCSV()
+db.create_all()
+loadCSV()
 	
 
