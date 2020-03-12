@@ -24,7 +24,7 @@ if ENV == 'dev':
 	app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:testin123!@localhost/books'
 else:
 	app.debug = False
-	app.config["DATABASE_URL"] = 'postgres://tqumexcapnevxy:da61efff3ac8c0a6bde80930e7d8c8431520498fb289cd423383091f3b8aab48@ec2-18-235-97-230.compute-1.amazonaws.com:5432/ddd4n4iva6a0ev?sslmode=require'
+	app.config["SQLALCHEMY_DATABASE_URI"] = 'postgres://tqumexcapnevxy:da61efff3ac8c0a6bde80930e7d8c8431520498fb289cd423383091f3b8aab48@ec2-18-235-97-230.compute-1.amazonaws.com:5432/ddd4n4iva6a0ev'
 # Only set this to true if you want notifications prior to and after changes
 # are committed to the database.
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
