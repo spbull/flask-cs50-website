@@ -37,6 +37,8 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 # Note 2: To set up a db, see dbtype_init.py files in books_dev folder
 db.init_app(app)
 
+app.cli.add_command(create_tables)
+
 # This prevents jsonify() from sorting dictionaries
 app.config['JSON_SORT_KEYS'] = False
 
