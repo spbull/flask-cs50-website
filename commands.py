@@ -2,6 +2,8 @@ import click
 from flask.cli import with_appcontext
 from models import *
 
+print('testing pos DAMMMIIIIIIIIIIIIT')
+
 #note db variable is created in models
 def loadCSV():
 	f = open("books.csv")
