@@ -1,5 +1,8 @@
+import os
 import csv
 from models import *
+
+print(os.environ.get('DATABASE_URL'))
 
 # This file is used to populate db's on heroku.
 # It allows for database table creation (db.create_all()) 
@@ -20,7 +23,7 @@ def loadCSV():
 		print(f"Added book to db: title:{title}, author:{author}, year:{year}, isbn:{isbn}")
 	db.commit()
 	
-db.create_all()
-loadCSV()
+#db.create_all()
+#loadCSV()
 	
 
