@@ -10,7 +10,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from livereload import Server, shell
 from models import db
 from forms import RegistrationForm, LoginForm, SearchForm, ReviewForm
-from commands import create_tables
 from services import getBookInfo
 
 app = Flask(__name__)
