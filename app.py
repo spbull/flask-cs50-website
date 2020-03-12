@@ -23,10 +23,12 @@ if ENV == 'dev':
 	app.debug = True
 	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:testin123!@localhost/books'
 	app.secret_key = 'removed for prod'
+	engine = create_engine("postgresql://postgres:testin123!@localhost/books")
 else:
 	app.debug = False
 	app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 	app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+	engine = create_engine(os.environ.get('DATABASE_URL'))
 	
 # Only set this to true if you want notifications prior to and after changes
 # are committed to the database.
@@ -41,7 +43,6 @@ db.init_app(app)
 app.config['JSON_SORT_KEYS'] = False
 
 # sqlalchemy engine used to connect to existing database
-engine = create_engine("postgresql://postgres:testin123!@localhost/books")
 sql_db = scoped_session(sessionmaker(bind=engine))
 
 # Index Route: If user logged in, goes to profile, else goes to index.html
