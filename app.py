@@ -21,10 +21,13 @@ ENV = 'prod'
 
 if ENV == 'dev':
 	app.debug = True
-	app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:testin123!@localhost/books'
+	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:testin123!@localhost/books'
+	app.secret_key = 'removed for prod'
 else:
 	app.debug = False
-	app.config["SQLALCHEMY_DATABASE_URI"] = 'postgres://tqumexcapnevxy:da61efff3ac8c0a6bde80930e7d8c8431520498fb289cd423383091f3b8aab48@ec2-18-235-97-230.compute-1.amazonaws.com:5432/ddd4n4iva6a0ev'
+	app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+	app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+	
 # Only set this to true if you want notifications prior to and after changes
 # are committed to the database.
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -250,8 +253,6 @@ def isbnAPI(isbn):
 		
 
 def main():
-	app.secret_key = 'SECRET_KEY'
-	
 	#server = Server(app.wsgi_app)
 	#server.watch(os.path.join(os.getcwd(), 'static/*.css'))
 	#server.watch(os.path.join(os.getcwd(), 'static/*.js'))
