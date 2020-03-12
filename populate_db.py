@@ -1,3 +1,4 @@
+import csv
 from models import *
 
 # This file is used to populate db's on heroku.
