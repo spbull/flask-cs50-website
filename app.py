@@ -21,9 +21,9 @@ ENV = 'prod'
 
 if ENV == 'dev':
 	app.debug = True
-	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:testin123!@localhost/books'
+	app.config['SQLALCHEMY_DATABASE_URI'] = 'local db url'
 	app.secret_key = 'removed for prod'
-	engine = create_engine("postgresql://postgres:testin123!@localhost/books")
+	engine = create_engine("local db url")
 else:
 	app.debug = False
 	app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
