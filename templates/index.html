@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+	<div class="container h-100">
+		<div class=" h-100 justify-content-center align-items-center">
+		    <div id="welcome" class="text-center">
+			<h1>Welcome to Book Nerd!</h1>
+			<h6>Register or Login and start reviewing books today.</h6>
+				{% if session.logged_in == NULL %}
+			    <div id="welcome-btns">
+				<a href="/register" class="btn-lg btn-primary">Register</a>
+				<a href="/login" class="btn-lg btn-success">Login</a>
+				</div>
+				{% endif %}
+			</div>
+		</div>		
+	</div>
+	
+	
+{% endblock %}

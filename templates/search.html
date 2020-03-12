@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+	<div class="container">
+		<h5>Welcome: {{session.username}}</h5>
+		
+		
+		{% include "includes/_messages.html" %}
+		<form method="POST" action="" >
+			<div class="form-group">
+				<input type="search" name="search" required class="form-control" placeholder="Search By Title, Author, or ISBN" value={{request.form.search}}>
+			</div>
+			<div class="form-group">
+			<input type="submit" class="btn btn-primary" value="search">
+			</div>
+		</form>
+	
+		
+		<br>
+		<br>
+		<div>
+			<h5>Favorites</h5>
+			<p>You haven't added any books to your favorites yet<p>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h5>Your Reviews</h5>
+			<p>You haven't reviewed any books yet</p>
+		</div>
+		
+	</div>
+{% endblock %}

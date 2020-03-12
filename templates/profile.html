@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+	<div class="container">
+		<h5>Welcome: {{session.username}}</h5>
+		
+		{% include "includes/_messages.html" %}
+		<form method="POST" action="" >
+			<div class="form-group">
+				<input type="search" name="search" required class="form-control" placeholder="Search By Title, Author, ISBN, or Keyword" value={{request.form.search}}>
+			</div>
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary" value="search">
+			</div>
+		</form>
+	
+		{%if result != None %}
+			{%for row in result%}
+				<div>
+					<a href="{{url_for('book', isbn=row.1)}}">"{{row.2}}" ({{row.4}}) By {{row.3}}; isbn: {{row.1}}</a>
+				</div>
+			{%endfor%}
+		{%endif%}
+		
+		<br>
+		<div>
+			<h5>Your Reviews</h5>
+		    {%if all_reviews  == 0 %}	
+				<h6>You haven't reviewed any books yet</h6>
+			{%else%}
+				{% for title, author, score, review, isbn in all_reviews%}
+				    <h5><a href="{{url_for('book', isbn=isbn )}}">"{{title}}"  by  {{author}}</a></h5>
+					<h6>Score: {{score}}</h6>
+					<p>{{review}}</p>
+					<hr>
+				{%endfor%}
+			{%endif%}
+		</div>
+		
+	</div>
+{% endblock %}

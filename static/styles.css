@@ -1,0 +1,67 @@
+/*REMEMBER TO DISABLE CACHE IN CHROME DEVTOOLS NETWORK TAB*/
+
+body{
+	color: rgba(0,0,0,0.);
+	background:rgba(248,236,194, 0.1);
+}
+
+#logo {
+	font-family: 'Raleway', sans-serif;
+	font-size:40px;
+}
+
+ul a{
+	font-size: 20px;
+}
+
+h1, h2, h3, h4, h5 {
+	margin-top: 25px;
+	font-family: 'Raleway', sans-serif;
+}
+
+.container {
+	max-width:800px;
+}
+
+#logo{
+
+}
+
+#welcome-btns{
+	margin-top:25px;
+}
+
+img{
+	height:300px;
+	margin:25px 0 0 0;
+}
+
+.author_name{
+	font-size:1.3em;
+}
+
+#review_container h1, h4{
+	margin:0;
+	padding:0;
+}
+
+#user_score{
+	display:flex;
+	
+}
+
+#user_score h1{
+	  cursor: pointer;
+}
+
+#user_review{
+	margin-top:10px;
+}
+
+label > input{
+	visibility:hidden;  /*hides original radio button & star takes its place*/
+	position: absolute; /*removes hidden button from document flow*/
+}
+
+
+
