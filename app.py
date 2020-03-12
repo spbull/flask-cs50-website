@@ -33,12 +33,10 @@ else:
 # are committed to the database.
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-# Database initilization and linked to app.
+# db initilized and linked to app.
 # Note 1: db object created in models.py
 # Note 2: To set up a db, see dbtype_init.py files in books_dev folder
 db.init_app(app)
-
-app.cli.add_command(create_tables)
 
 # This prevents jsonify() from sorting dictionaries
 app.config['JSON_SORT_KEYS'] = False
