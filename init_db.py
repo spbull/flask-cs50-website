@@ -3,6 +3,7 @@ import csv
 from models import *
 
 print(os.environ.get('DATABASE_URL'))
+print(os.environ.get('SECRET_KEY'))
 
 # This file is used to populate db's on heroku.
 # It allows for database table creation (db.create_all()) 
