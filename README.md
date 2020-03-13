@@ -9,6 +9,7 @@ I focused more on the back-end Python side of things rather than a flashy front-
 the site, so the visuals are not stunning by any means. That aside, the site is fully functional and
 contains user registration, account creation, search capablitlies, and a functional api. All data is 
 stored in a postgresql database.**
+
 ---
 
 ### [Visit Site](https://booknerd.herokuapp.com/)
