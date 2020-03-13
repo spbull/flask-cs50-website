@@ -10,4 +10,4 @@ the site, so the visuals are not stunning by any means. That aside, the site is 
 contains user registration, account creation, search capablitlies, and a functional api. All data is 
 stored in a postgresql database.**
 
-https://booknerd.herokuapp.com/
+### [Visit Site](https://booknerd.herokuapp.com/)
