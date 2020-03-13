@@ -16,4 +16,4 @@ stored in a postgresql database.**
 
 ---
 
-![](images/screen.png)
+![](static/screen.png)
