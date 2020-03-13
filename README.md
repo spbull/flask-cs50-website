@@ -8,7 +8,7 @@ examples on the entire lifecycle of Python Flask and Django applications.**
 It is a Python Flask app and I focused more on the back-end Python programming side of things rather 
 than creating a flashy front-end, so the visuals are not stunning by any means. 
 That aside, the site is fully functional and contains user registration, account creation, 
-search capablitlies, and a functional api. All data is stored in a postgresql database.**
+search capablitlies, and a functional front-end api. All data is stored in a postgresql database.**
 
 ### [Visit Site](https://booknerd.herokuapp.com/)
 
