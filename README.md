@@ -1,4 +1,4 @@
-# Harvard CS50 Web Programming with Python and Javascript class project I (2018)
+# Harvard CS50 Web Programming with Python and Javascript class project (2018)
 
 **In 2018 I took a Harvard Univeristy online course on Python web programming in order
 to expedite the learning process for Python web development as well as to get real world
